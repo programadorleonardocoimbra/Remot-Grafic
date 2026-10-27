@@ -50,6 +50,61 @@ input[type="date"]::-webkit-calendar-picker-indicator{margin:0 0 0 5px;flex:none
   .receipt-bottom{gap:9px}
   .buttons{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:19px}
   .button{width:100%;font-size:17px;min-height:52px}
+
+  /* Centralização visual do formulário no mobile */
+  .editor form,
+  .editor .topline,
+  .editor .rule,
+  .editor .autosave,
+  .preview-area,
+  .buttons,
+  .print-help{
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .item-list{
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .field input,
+  .field textarea,
+  .field input::placeholder,
+  .field textarea::placeholder{
+    text-align:center;
+  }
+
+  .item-heading,
+  .item-row,
+  .empty{
+    text-align:center;
+  }
+
+  .paid-control{
+    justify-content:center;
+  }
+
+  .editor-footer .field,
+  .editor-footer .field label,
+  .editor-footer .field input{
+    text-align:center;
+  }
+
+  .editor-footer .total-editor{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    width:100%;
+  }
+
+  .total-editor small,
+  .total-editor strong{
+    text-align:center;
+    width:100%;
+  }
 }
 @media(max-width:355px){
   .brand{width:72px}.choice{gap:7px}.choice label{font-size:14px}
