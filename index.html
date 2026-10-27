@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#fff000"><title>Remot Grafic | Orçamentos e Pedidos</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header class="mobile-head"><img src="assets/logo-colorida.png" alt="Gráfica Remota"><strong>REMOT GRAFIC</strong></header>
+<main class="workspace">
+<section class="editor" aria-label="Dados do orçamento ou pedido">
+ <div class="topline"><img class="brand" src="assets/logo-colorida.png" alt="Gráfica Remota"><div class="choice"><label><input type="radio" name="tipo" value="Orçamento" checked><span class="custom-radio"></span> Orçamento</label><label><input type="radio" name="tipo" value="Pedido"><span class="custom-radio"></span> Pedido</label></div></div>
+ <div class="rule"></div>
+ <form id="form" autocomplete="on">
+  <div class="field"><label for="cliente">Cliente</label><input id="cliente" placeholder="Nome do cliente" required></div>
+  <div class="fields two"><div class="field"><label for="contato">Contato</label><input id="contato" type="tel" placeholder="(21) 99999-9999"></div><div class="field"><label for="dataPedido">Data do Pedido</label><input id="dataPedido" type="date"></div></div>
+  <div class="field width-medium"><label for="email">E-mail</label><input id="email" type="email" placeholder="cliente@exemplo.com"></div>
+  <div class="field width-narrow"><label for="pagamento">Forma de Pagamento</label><input id="pagamento" placeholder="Pix, cartão, dinheiro..."></div>
+  <div class="rule rule-tight"></div>
+  <div class="field"><label for="descricao">Descrição</label><input id="descricao" placeholder="Produto, medida, acabamento..."></div>
+  <div class="fields product-fields"><div class="field"><label for="quantidade">Qtd.</label><input id="quantidade" type="number" min="1" step="1" value="1" inputmode="numeric"></div><div class="field"><label for="preco">Preço R$ (unitário)</label><input id="preco" type="text" inputmode="decimal" placeholder="0,00"></div><button type="button" class="add-item" id="adicionar">+ Adicionar</button></div>
+  <div class="item-list"><div class="item-heading"><span>Qtd.</span><span>Descrição</span><span>Preço R$</span><span>Ações</span></div><div id="itens" class="items"><p class="empty">Nenhum item adicionado.</p></div></div>
+  <div class="field observations"><label for="observacoes">Obs.</label><textarea id="observacoes" rows="3" placeholder="Observações do pedido..."></textarea></div>
+  <div class="fields extra-fields"><div class="field"><label for="entrega">Data Entrega</label><input type="date" id="entrega"></div><div class="field"><label for="recebimento">Entrega</label><input id="recebimento" placeholder="Retirada / delivery"></div></div>
+  <div class="editor-footer"><label class="paid-control">Pedido foi Pago? <input type="checkbox" id="pago"><span class="custom-check"></span></label><div class="field"><label for="dataPagamento">Data de Pagamento</label><input type="date" id="dataPagamento"></div><div class="total-editor"><small>TOTAL R$</small><strong id="totalFormulario">0,00</strong></div></div>
+ </form>
+ <p class="autosave"><span aria-hidden="true">●</span> Seus dados são salvos automaticamente neste navegador.</p>
+</section>
+<section class="preview-area" aria-label="Prévia do documento"><div class="preview-label">Prévia</div>
+ <article id="documento" class="receipt"><div class="receipt-header"><div class="receipt-logo"><img src="assets/logo-preta.png" alt="Gráfica Remota"><small>Sua Gráfica 100% Online</small></div><div class="receipt-status"><strong id="tipoPreview">ORÇAMENTO</strong><small>Cupom Não Fiscal</small><b>Data do Pedido: <span id="dataPreview">—</span></b></div></div>
+ <div class="dash"></div><div class="customer"><p><b>Cliente:</b> <span id="clientePreview">—</span></p><p><b>Contato:</b> <span id="contatoPreview">—</span></p><p><b>E-mail:</b> <span id="emailPreview">—</span></p><p><b>Forma de Pagamento:</b> <span id="pagamentoPreview">—</span></p></div><div class="dash"></div>
+ <div class="receipt-items"><div class="receipt-items-head"><b>Qtd.</b><b>Descrição</b><b>Preço R$</b></div><div id="itensPreview"><p class="preview-empty">Os produtos adicionados aparecerão aqui.</p></div></div><div class="receipt-total"><b>TOTAL R$</b><strong id="totalPreview">0,00</strong></div>
+ <div class="dash"></div><p class="receipt-note"><b>OBS:</b> <span id="obsPreview">—</span></p><div class="dash"></div><div class="delivery"><b>Data Entrega:</b> <span id="entregaPreview">—</span><b>Entrega:</b> <span id="recebimentoPreview">—</span></div><div class="dash"></div>
+ <div class="receipt-bottom"><div class="contacts"><b>Em caso de dúvidas,<br> entre em contato pelos<br> canais oficiais:</b></div><div class="social"><strong>◉ (21) 92048-3712</strong><strong>◎ @graficaremota</strong></div></div><div class="paid-stamp" id="seloPago" hidden> PEDIDO PAGO <small id="dataPagaPreview"></small></div>
+ </article>
+ <div class="buttons"><button id="gerarPdf" class="button primary">Pedido em PDF</button><button id="limpar" class="button secondary">Limpar Campos</button></div><p class="print-help">Ao clicar em PDF, escolha <b>Salvar como PDF</b> no diálogo de impressão.</p>
+</section></main>
+<div class="modal-backdrop" id="confirmModal" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h2 id="modalTitle">Limpar todos os dados?</h2><p>Os campos e itens do documento serão apagados deste dispositivo.</p><div><button id="cancelarLimpeza" class="button secondary">Cancelar</button><button id="confirmarLimpeza" class="button danger">Sim, limpar</button></div></div></div>
+<script src="app.js" defer></script></body></html>
