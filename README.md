@@ -46,3 +46,14 @@ Remot-Grafic/
     ├── logo-colorida.png
     └── logo-preta.png
 ```
+
+
+## Versão 1.1 — correções para iPhone (Safari)
+- Campos de data com largura limitada à tela do dispositivo.
+- Contato, data do pedido, data da entrega e tipo da entrega passam a ocupar linhas próprias no mobile.
+- Checkbox de pagamento, data de pagamento e total reorganizados verticalmente.
+- Ajustes nas margens, tipografia, colunas e prévia amarela.
+- Removida a segunda exibição da frase já presente na logo preta.
+- Os dados armazenados anteriormente continuam disponíveis (mesma chave de armazenamento).
+
+Após enviar a atualização ao GitHub Pages, se a página antiga continuar aparecendo no iPhone, atualize a aba do Safari ou abra novamente o endereço.
